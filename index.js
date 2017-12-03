@@ -41,7 +41,7 @@ app.get('/users', function(req,res) {
         } 
     });
 
-    res.json(data);
+    res.json(tempDoc);
 
 });
 
