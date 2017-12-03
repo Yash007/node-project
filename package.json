@@ -1,0 +1,29 @@
+{
+  "name": "patient-data-clinical-management",
+  "version": "1.0.0",
+  "description": "Patient Data REST API is like web based data provider system working with cloud",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yash007/node-project.git"
+  },
+  "keywords": [
+    "Node",
+    "JS",
+    "RESTFull",
+    "API",
+    "Development",
+    "Patient",
+    "Data",
+    "Management"
+  ],
+  "author": "Yashkumar Sompura",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yash007/node-project/issues"
+  },
+  "homepage": "https://github.com/Yash007/node-project#readme"
+}
