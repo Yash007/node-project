@@ -10,44 +10,20 @@ var http = require('http');
 var fs = require('fs');
 var express = require('express');
 var app = express();
+var connection = require('./database.js');
 
-
-//Mongo DB Database Variables and required header files
-var mongoClient = require('mongodb').MongoClient;
-var assert = require('assert');
-var objectId = require('mongodb').ObjectID;
-var mongoHost = 'mongodb://localhost:27017/patient-clinical-data-management';
-var tempDoc = [];
+var userData = connection.userGetData();
+var patientData = connection.patientGetData();
 
 //GET requests for listing Doctors and nurses
 app.get('/users', function(req,res) {
-    
-    mongoClient.connect(mongoHost, function(err, db)   {
-        if(err) {
-            console.log("Error in Connection");
-        }
-        else    {
-            console.log("Connection Established with mongo db");
-            var cursor = db.collection('users').find();
-            if (tempDoc.length > 0 )    {
-                tempDoc = [];
-            }
-            cursor.each(function(err, doc) {   
-                if(doc != null) {
-                    tempDoc.push(doc);
-                }
-            });
-            db.close();
-        } 
-    });
-
-    res.json(tempDoc);
-
+    console.log(userData);
+    res.json(userData);
 });
 
 //GET Requests for listing Patients
 app.get('/patients', function(req, res) {
-
+    res.json(patientData);
 });
 
 //GET Request for listing Patient's records
